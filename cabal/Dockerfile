@@ -18,7 +18,7 @@ RUN apt-get update                                                          && \
     rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update                                                          && \
-    apt-get -y install libsnappy1v5 libsnappy-dev                           && \
+    apt-get -y install libsnappy1v5 libtinfo-dev libsnappy-dev jq           && \
     rm -rf /var/lib/apt/lists/*
 
 RUN stack install --install-ghc cabal-install                               && \

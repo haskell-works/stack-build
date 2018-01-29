@@ -13,8 +13,12 @@ ENV LANG=C.UTF-8 \
     PATH=/root/.cabal/bin:/root/.local/bin:/opt/ghc/$GHC_VERSION/bin:$PATH
 
 RUN apt-get update                                                          && \
-    apt-get -y install locales curl sudo libsnappy1v5 libsnappy-dev         && \
+    apt-get -y install locales curl sudo                                    && \
     locale-gen en_US.UTF-8 && curl -sSL https://get.haskellstack.org/ | sh  && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update                                                          && \
+    apt-get -y install libsnappy1v5 libtinfo-dev libsnappy-dev jq           && \
     rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update                                                          && \
