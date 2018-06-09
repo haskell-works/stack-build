@@ -30,3 +30,7 @@ RUN apt-get update                                                          && \
     apt-get -y remove python                                                && \
     apt-get -y autoremove                                                   && \
     rm -rf /var/lib/apt/lists/*
+
+RUN stack install --install-ghc hpack                                       && \
+    rm -rf /root/.stack                                                     && \
+    rm -rf /root/.stack-work

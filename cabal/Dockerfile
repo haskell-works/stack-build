@@ -24,3 +24,7 @@ RUN apt-get update                                                          && \
 RUN stack install --install-ghc cabal-install                               && \
     rm -rf /root/.stack                                                     && \
     rm -rf /root/.stack-work
+
+RUN stack install --install-ghc hpack                                       && \
+    rm -rf /root/.stack                                                     && \
+    rm -rf /root/.stack-work

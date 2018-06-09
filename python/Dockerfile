@@ -24,3 +24,7 @@ RUN apt-get update                                                          && \
 RUN apt-get update                                                          && \
     apt-get -y install python                                               && \
     rm -rf /var/lib/apt/lists/*
+
+RUN stack install --install-ghc hpack                                       && \
+    rm -rf /root/.stack                                                     && \
+    rm -rf /root/.stack-work

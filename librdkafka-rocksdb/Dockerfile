@@ -32,3 +32,7 @@ RUN apt-get update                                                          && \
 
 ADD install-rocksdb.sh /install-rocksdb.sh
 RUN /install-rocksdb.sh
+
+RUN stack install --install-ghc hpack                                       && \
+    rm -rf /root/.stack                                                     && \
+    rm -rf /root/.stack-work

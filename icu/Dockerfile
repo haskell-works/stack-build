@@ -20,3 +20,7 @@ RUN apt-get update                                                          && \
 RUN apt-get update                                                            && \
     apt-get -y install libsnappy1v5 libtinfo-dev libsnappy-dev jq libicu-dev  && \
     rm -rf /var/lib/apt/lists/*
+
+RUN stack install --install-ghc hpack                                       && \
+    rm -rf /root/.stack                                                     && \
+    rm -rf /root/.stack-work
