@@ -18,7 +18,8 @@ RUN apt-get update                                                          && \
     rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update                                                          && \
-    apt-get -y install libsnappy1v5 libtinfo-dev libsnappy-dev jq libpq5    && \
+    apt-get -y install libsnappy1v5 libtinfo-dev libsnappy-dev jq libpq5       \
+                       libpq-dev                                            && \
     rm -rf /var/lib/apt/lists/*
 
 RUN stack install --install-ghc hpack                                       && \
