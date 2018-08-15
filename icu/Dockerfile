@@ -17,8 +17,10 @@ RUN apt-get update                                                          && \
     locale-gen en_US.UTF-8 && curl -sSL https://get.haskellstack.org/ | sh  && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update                                                            && \
-    apt-get -y install libsnappy1v5 libtinfo-dev libsnappy-dev jq libicu-dev  && \
+RUN apt-get update                                                          && \
+    apt-get -y install libsnappy1v5 libtinfo-dev libsnappy-dev jq           && \
+    apt-get -y install libicu-dev                                           && \
+    apt-get -y install liblzma5 liblzma-dev                                 && \
     rm -rf /var/lib/apt/lists/*
 
 RUN stack install --install-ghc hpack                                       && \

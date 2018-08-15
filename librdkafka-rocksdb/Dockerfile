@@ -20,6 +20,7 @@ RUN apt-get update                                                          && \
 
 RUN apt-get update                                                          && \
     apt-get -y install libsnappy1v5 libtinfo-dev libsnappy-dev jq           && \
+    apt-get -y install liblzma5 liblzma-dev                                 && \
     rm -rf /var/lib/apt/lists/*
 
 ADD install-librdkafka.sh /install-librdkafka.sh
