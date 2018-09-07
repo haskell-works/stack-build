@@ -30,3 +30,9 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -          && \
 RUN stack install --install-ghc hpack                                       && \
     rm -rf /root/.stack                                                     && \
     rm -rf /root/.stack-work
+
+# Buggy versions of ld.bfd fail to link some Haskell packages:
+# https://sourceware.org/bugzilla/show_bug.cgi?id=17689. Gold is
+# faster anyways and uses less RAM.
+RUN update-alternatives --install "/usr/bin/ld" "ld" "/usr/bin/ld.gold" 20
+RUN update-alternatives --install "/usr/bin/ld" "ld" "/usr/bin/ld.bfd" 10
