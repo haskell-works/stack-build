@@ -25,3 +25,7 @@ RUN apt-get update                                                          && \
 RUN stack install --install-ghc hpack                                       && \
     rm -rf /root/.stack                                                     && \
     rm -rf /root/.stack-work
+
+RUN apt-get update                                                          && \
+    apt-get -y install libpcre3 libpcre3-dev                                && \
+    rm -rf /var/lib/apt/lists/*
