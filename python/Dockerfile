@@ -21,6 +21,7 @@ RUN apt-get update                                                          && \
     apt-get -y install libsnappy1v5 libtinfo-dev libsnappy-dev jq           && \
     apt-get -y install liblzma5 liblzma-dev                                 && \
     apt-get -y install libz3-dev                                            && \
+    apt-get -y install libpcre3 libpcre3-dev                                && \
     rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update                                                          && \

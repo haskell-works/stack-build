@@ -22,6 +22,7 @@ RUN apt-get update                                                          && \
     apt-get -y install libicu-dev                                           && \
     apt-get -y install liblzma5 liblzma-dev                                 && \
     apt-get -y install libz3-dev                                            && \
+    apt-get -y install libpcre3 libpcre3-dev                                && \
     rm -rf /var/lib/apt/lists/*
 
 RUN stack install --install-ghc hpack                                       && \
