@@ -54,6 +54,8 @@ RUN apt-get update                                                          && \
     apt-get install -y pkg-config python3.5-dev realpath                    && \
     rm -rf /var/lib/apt/lists/*
 
+RUN ln -s /usr/bin/python3.5 /usr/bin/python
+
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
     PATH=/root/.cabal/bin:/root/.local/bin:/opt/ghc/bin:$PATH
