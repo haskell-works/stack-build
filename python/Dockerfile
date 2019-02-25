@@ -28,6 +28,11 @@ RUN apt-get update                                                          && \
     apt-get -y install python                                               && \
     rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update                                                          && \
+    apt-get -y build-essential cmake libgmp3-dev gengetopt libpcap-dev      && \
+    apt-get -y flex byacc libjson-c-dev pkg-config libunistring-dev         && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN stack install --install-ghc hpack                                       && \
     rm -rf /root/.stack                                                     && \
     rm -rf /root/.stack-work
