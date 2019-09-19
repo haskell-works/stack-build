@@ -2,8 +2,8 @@ FROM ubuntu:18.04
 
 MAINTAINER John Ky <newhoggy@gmail.com>
 
-ARG GHC_VERSION=8.0.2
-ARG LTS_SLUG=lts-9.0
+ARG GHC_VERSION=8.6.5
+ARG LTS_SLUG=lts-13.21
 ARG PID1_VERSION=0.1.0.1
 ARG DEBIAN_FRONTEND=noninteractive
 
