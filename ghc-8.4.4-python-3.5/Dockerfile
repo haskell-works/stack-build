@@ -14,7 +14,7 @@ RUN apt-get update                                                          && \
     echo Done
 
 RUN apt-get update                                                          && \
-    apt-get -y install locales curl sudo git                                && \
+    apt-get -y install locales curl wget sudo git                           && \
     rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update                                                          && \
